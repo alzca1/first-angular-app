@@ -1,9 +1,9 @@
 <h2>Products</h2>
 
-<div *ngFor="let product of products">
+<div *ngFor="let product of products; index as productId">
     <!-- usamos el property binding para mostrar un mensaje al pasar
     el ratón por encima; no hace falta poner el producto entre llaves --> 
-    <a [title]="product.name + ' details'">
+    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
         <h3>{{product.name}}</h3>
 
     </a>
